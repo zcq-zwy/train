@@ -1,4 +1,4 @@
-package com.zcqzwy.member.aspect;
+package com.zcqzwy.common;
 
 import cn.hutool.core.util.RandomUtil;
 import com.alibaba.fastjson.JSONObject;
