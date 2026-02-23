@@ -9,7 +9,6 @@
   </parent>
 
   <artifactId>member</artifactId>
-  <packaging>jar</packaging>
 
   <name>member</name>
   <url>http://maven.apache.org</url>
