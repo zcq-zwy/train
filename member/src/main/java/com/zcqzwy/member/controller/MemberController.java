@@ -4,6 +4,7 @@ import com.zcqzwy.common.resp.CommonResp;
 import com.zcqzwy.member.req.MemberRegisterReq;
 import com.zcqzwy.member.service.MemberService;
 import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,7 +32,7 @@ public class MemberController {
   }
 
   @PostMapping("/register")
-  public CommonResp<Long> register(MemberRegisterReq memberRegisterReq){
+  public CommonResp<Long> register(@Valid MemberRegisterReq memberRegisterReq){
     long register = memberService.register(memberRegisterReq);
    return new CommonResp<>(register);
   }

@@ -1,5 +1,7 @@
 package com.zcqzwy.member.req;
 
+import jakarta.validation.constraints.NotBlank;
+
 /**
  * <p>作者： zcq</p> 
  * <p>文件名称: MemberRegisterReq </p> 
@@ -9,6 +11,7 @@ package com.zcqzwy.member.req;
  * @version 1.0
  **/
 public class MemberRegisterReq {
+  @NotBlank(message = "手机号不能为空")
   private String mobile;
 
   public String getMobile() {

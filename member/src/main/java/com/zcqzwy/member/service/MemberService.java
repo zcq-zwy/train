@@ -1,5 +1,7 @@
 package com.zcqzwy.member.service;
 
+import com.zcqzwy.common.exception.BusinessException;
+import com.zcqzwy.common.exception.BusinessExceptionEnum;
 import com.zcqzwy.member.domain.Member;
 import com.zcqzwy.member.mapper.MemberMapper;
 import com.zcqzwy.member.req.MemberRegisterReq;
@@ -29,7 +31,7 @@ public class MemberService {
      //查看手机号是否已经注册
     List<Member> members = memberMapper.selectAllByMobile(mobile);
     if(!members.isEmpty()){
-       throw new RuntimeException("手机号已经注册");
+       throw new BusinessException(BusinessExceptionEnum.MEMBER_MOBILE_EXIST);
     }
 
     Member member = new Member();
