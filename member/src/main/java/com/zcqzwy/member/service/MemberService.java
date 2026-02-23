@@ -1,7 +1,9 @@
 package com.zcqzwy.member.service;
 
+import com.zcqzwy.member.domain.Member;
 import com.zcqzwy.member.mapper.MemberMapper;
 import jakarta.annotation.Resource;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 /**
@@ -19,4 +21,19 @@ public class MemberService {
    public int count(){
        return memberMapper.count();
    }
+
+  public long register(String  mobile){
+
+     //查看手机号是否已经注册
+    List<Member> members = memberMapper.selectAllByMobile(mobile);
+    if(!members.isEmpty()){
+       throw new RuntimeException("手机号已经注册");
+    }
+
+    Member member = new Member();
+      member.setMobile(mobile);
+      member.setId(System.currentTimeMillis());
+      memberMapper.insert(member);
+      return  member.getId();
+  }
 }
