@@ -1,7 +1,9 @@
 package com.zcqzwy.member.service;
 
+import cn.hutool.core.util.IdUtil;
 import com.zcqzwy.common.exception.BusinessException;
 import com.zcqzwy.common.exception.BusinessExceptionEnum;
+import com.zcqzwy.common.util.SnowUtil;
 import com.zcqzwy.member.domain.Member;
 import com.zcqzwy.member.mapper.MemberMapper;
 import com.zcqzwy.member.req.MemberRegisterReq;
@@ -36,7 +38,7 @@ public class MemberService {
 
     Member member = new Member();
       member.setMobile(mobile);
-      member.setId(System.currentTimeMillis());
+      member.setId(SnowUtil.getSnowflakeNextId());
       memberMapper.insert(member);
       return  member.getId();
   }
