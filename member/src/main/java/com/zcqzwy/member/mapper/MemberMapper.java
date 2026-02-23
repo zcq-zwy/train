@@ -1,15 +1,20 @@
 package com.zcqzwy.member.mapper;
 
-/**
- * <p>作者： zcq</p> 
- * <p>文件名称: MemberMapper </p> 
- * <p>描述: [类型描述] </p>
- * <p>创建时间: 2026/2/23 </p>
- * @author <a href="mail to: 2928235428@qq.com" rel="nofollow">作者</a>
- * @version 1.0
- **/
+import com.zcqzwy.member.domain.Member;
+
 public interface MemberMapper {
 
-  int count();
+  int deleteByPrimaryKey(Long id);
 
+  int insert(Member record);
+
+  int insertSelective(Member record);
+
+  Member selectByPrimaryKey(Long id);
+
+  int updateByPrimaryKeySelective(Member record);
+
+  int updateByPrimaryKey(Member record);
+
+  int count();
 }
