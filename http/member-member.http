@@ -6,6 +6,5 @@ Accept: application/json
 POST http://127.0.0.1:8000/member/member/register
 Content-Type: application/x-www-form-urlencoded
 
-mobile=18888888888
-
+mobile=1845688
 ###
