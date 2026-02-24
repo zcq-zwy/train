@@ -6,7 +6,7 @@
       </router-link>
     </div>
     <div style="float: right; color: white;">
-<!--      您好：{{member.mobile}} &nbsp;&nbsp;-->
+      您好：{{member.mobile}} &nbsp;&nbsp;
       <router-link to="/login" style="color: white;">
         退出登录
       </router-link>
