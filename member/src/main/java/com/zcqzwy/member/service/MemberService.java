@@ -2,8 +2,10 @@ package com.zcqzwy.member.service;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.IdUtil;
+import cn.hutool.jwt.JWTUtil;
 import com.zcqzwy.common.exception.BusinessException;
 import com.zcqzwy.common.exception.BusinessExceptionEnum;
+import com.zcqzwy.common.util.JwtUtil;
 import com.zcqzwy.member.req.MemberLoginReq;
 import com.zcqzwy.member.req.MemberSendCodeReq;
 import com.zcqzwy.common.util.SnowUtil;
@@ -13,6 +15,7 @@ import com.zcqzwy.member.req.MemberRegisterReq;
 import com.zcqzwy.member.resp.MemberLoginResp;
 import jakarta.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -91,6 +94,8 @@ public class MemberService {
     }
 
     MemberLoginResp memberLoginResp = BeanUtil.copyProperties(members.get(0), MemberLoginResp.class);
+    String token = JwtUtil.createToken(memberLoginResp.getId(),memberLoginResp.getMobile());
+    memberLoginResp.setToken(token);
     return memberLoginResp;
    }
 

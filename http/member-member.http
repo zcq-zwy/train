@@ -17,7 +17,10 @@ mobile=15778909087
 
 
 POST http://127.0.0.1:8000/member/member/login
-Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
 
-mobile=15778909087&code=9527
+{
+  "mobile": "15778909087",
+  "code": "9527"
+}
 ###
