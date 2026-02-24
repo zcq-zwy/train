@@ -44,7 +44,7 @@ public class MemberService {
        throw new BusinessException(BusinessExceptionEnum.MEMBER_MOBILE_EXIST);
     }
 
-    Member member = new Member();
+      Member member = new Member();
       member.setMobile(mobile);
       member.setId(SnowUtil.getSnowflakeNextId());
       memberMapper.insert(member);
