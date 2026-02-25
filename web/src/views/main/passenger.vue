@@ -313,9 +313,6 @@ export default defineComponent({
   color: #1f1f1f;
 }
 
-/* 表格样式微调 */
-:deep(.custom-table .ant-table-thead  > tr > th) {
-  background-color: #fafafa;
-  font-weight: 600;
-}
+
+
 </style>

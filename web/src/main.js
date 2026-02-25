@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import axios from 'axios';
+import './assets/js/enums';
 
 // 引入ant-vue
 import Antd, {notification} from 'ant-design-vue';
