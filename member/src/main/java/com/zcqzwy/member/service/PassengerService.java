@@ -2,6 +2,7 @@ package com.zcqzwy.member.service;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.date.DateTime;
+import com.zcqzwy.common.context.LoginMemberContext;
 import com.zcqzwy.common.util.SnowUtil;
 import com.zcqzwy.member.req.PassengerSaveReq;
 import jakarta.annotation.Resource;
@@ -24,6 +25,7 @@ public class PassengerService{
         DateTime now = DateTime.now();
         Passenger passenger = BeanUtil.copyProperties(record, Passenger.class);
         passenger.setId(SnowUtil.getSnowflakeNextId());
+        passenger.setMemberId(LoginMemberContext.getId());
         passenger.setCreateTime(now);
         passenger.setUpdateTime(now);
         return passengerMapper.insert(passenger);
