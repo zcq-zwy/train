@@ -3,114 +3,115 @@ package com.zcqzwy.member.domain;
 import java.util.Date;
 
 /**
-    * 乘车人
-    */
+ * 乘车人
+ */
 public class Passenger {
-    /**
-    * id
-    */
-    private Long id;
 
-    /**
-    * 会员id
-    */
-    private Long memberId;
+  /**
+   * id
+   */
+  private Long id;
 
-    /**
-    * 姓名
-    */
-    private String name;
+  /**
+   * 会员id
+   */
+  private Long memberId;
 
-    /**
-    * 身份证
-    */
-    private String idCard;
+  /**
+   * 姓名
+   */
+  private String name;
 
-    /**
-    * 旅客类型|枚举[PassengerTypeEnum]
-    */
-    private String type;
+  /**
+   * 身份证
+   */
+  private String idCard;
 
-    /**
-    * 新增时间
-    */
-    private Date createTime;
+  /**
+   * 旅客类型|枚举[PassengerTypeEnum]
+   */
+  private String type;
 
-    /**
-    * 修改时间
-    */
-    private Date updateTime;
+  /**
+   * 新增时间
+   */
+  private Date createTime;
 
-    public Long getId() {
-        return id;
-    }
+  /**
+   * 修改时间
+   */
+  private Date updateTime;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public Long getMemberId() {
-        return memberId;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
+  public Long getMemberId() {
+    return memberId;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setMemberId(Long memberId) {
+    this.memberId = memberId;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getIdCard() {
-        return idCard;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
-    }
+  public String getIdCard() {
+    return idCard;
+  }
 
-    public String getType() {
-        return type;
-    }
+  public void setIdCard(String idCard) {
+    this.idCard = idCard;
+  }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+  public String getType() {
+    return type;
+  }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
+  public void setType(String type) {
+    this.type = type;
+  }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
+  public Date getCreateTime() {
+    return createTime;
+  }
 
-    public Date getUpdateTime() {
-        return updateTime;
-    }
+  public void setCreateTime(Date createTime) {
+    this.createTime = createTime;
+  }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
+  public Date getUpdateTime() {
+    return updateTime;
+  }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", memberId=").append(memberId);
-        sb.append(", name=").append(name);
-        sb.append(", idCard=").append(idCard);
-        sb.append(", type=").append(type);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", updateTime=").append(updateTime);
-        sb.append("]");
-        return sb.toString();
-    }
+  public void setUpdateTime(Date updateTime) {
+    this.updateTime = updateTime;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName());
+    sb.append(" [");
+    sb.append("Hash = ").append(hashCode());
+    sb.append(", id=").append(id);
+    sb.append(", memberId=").append(memberId);
+    sb.append(", name=").append(name);
+    sb.append(", idCard=").append(idCard);
+    sb.append(", type=").append(type);
+    sb.append(", createTime=").append(createTime);
+    sb.append(", updateTime=").append(updateTime);
+    sb.append("]");
+    return sb.toString();
+  }
 }
