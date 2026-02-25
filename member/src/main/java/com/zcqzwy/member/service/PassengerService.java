@@ -28,7 +28,7 @@ public class PassengerService{
     private PassengerMapper passengerMapper;
 
 
-    public int deleteByPrimaryKey(Long id) {
+    public int delete(Long id) {
         return passengerMapper.deleteByPrimaryKey(id);
     }
 
@@ -48,25 +48,9 @@ public class PassengerService{
         }
     }
 
-    
-    public int insertSelective(Passenger record) {
-        return passengerMapper.insertSelective(record);
-    }
 
     
-    public Passenger selectByPrimaryKey(Long id) {
-        return passengerMapper.selectByPrimaryKey(id);
-    }
 
-    
-    public int updateByPrimaryKeySelective(Passenger record) {
-        return passengerMapper.updateByPrimaryKeySelective(record);
-    }
-
-    
-    public int updateByPrimaryKey(Passenger record) {
-        return passengerMapper.updateByPrimaryKey(record);
-    }
 
     public PageResp<PassengerQueryResp> queryList(PassengerQueryReq passengerQueryReq) {
         Passenger passenger = BeanUtil.copyProperties(passengerQueryReq, Passenger.class);
