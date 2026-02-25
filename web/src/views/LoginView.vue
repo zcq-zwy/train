@@ -107,7 +107,7 @@ export default defineComponent({
     const countDown = ref(0); // 倒计时数字
 
     const loginForm = reactive({
-      mobile: '13000000000',
+      mobile: '15778909087',
       code: '',
     });
 

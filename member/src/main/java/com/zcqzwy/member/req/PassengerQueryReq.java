@@ -1,7 +1,7 @@
 package com.zcqzwy.member.req;
 
 
-import com.zcqzwy.common.resp.PageReq;
+import com.zcqzwy.common.req.PageReq;
 
 public class PassengerQueryReq extends PageReq {
 

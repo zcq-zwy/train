@@ -1,4 +1,4 @@
-package com.zcqzwy.common.resp;
+package com.zcqzwy.common.req;
 
 
 import jakarta.validation.constraints.Max;
