@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zcqzwy.business.mapper.TrainSeatMapper">
+  <resultMap id="BaseResultMap" type="com.zcqzwy.business.domain.TrainSeat">
+    <!--@mbg.generated-->
+    <!--@Table train_business.train_seat-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="train_code" jdbcType="VARCHAR" property="trainCode" />
+    <result column="carriage_index" jdbcType="INTEGER" property="carriageIndex" />
+    <result column="row" jdbcType="CHAR" property="row" />
+    <result column="col" jdbcType="CHAR" property="col" />
+    <result column="seat_type" jdbcType="CHAR" property="seatType" />
+    <result column="carriage_seat_index" jdbcType="INTEGER" property="carriageSeatIndex" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, train_code, carriage_index, `row`, col, seat_type, carriage_seat_index, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from train_business.train_seat
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from train_business.train_seat
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zcqzwy.business.domain.TrainSeat">
+    <!--@mbg.generated-->
+    insert into train_business.train_seat (id, train_code, carriage_index, 
+      `row`, col, seat_type, carriage_seat_index, 
+      create_time, update_time)
+    values (#{id,jdbcType=BIGINT}, #{trainCode,jdbcType=VARCHAR}, #{carriageIndex,jdbcType=INTEGER}, 
+      #{row,jdbcType=CHAR}, #{col,jdbcType=CHAR}, #{seatType,jdbcType=CHAR}, #{carriageSeatIndex,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zcqzwy.business.domain.TrainSeat">
+    <!--@mbg.generated-->
+    insert into train_business.train_seat
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="trainCode != null and trainCode != ''">
+        train_code,
+      </if>
+      <if test="carriageIndex != null">
+        carriage_index,
+      </if>
+      <if test="row != null and row != ''">
+        `row`,
+      </if>
+      <if test="col != null and col != ''">
+        col,
+      </if>
+      <if test="seatType != null and seatType != ''">
+        seat_type,
+      </if>
+      <if test="carriageSeatIndex != null">
+        carriage_seat_index,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="trainCode != null and trainCode != ''">
+        #{trainCode,jdbcType=VARCHAR},
+      </if>
+      <if test="carriageIndex != null">
+        #{carriageIndex,jdbcType=INTEGER},
+      </if>
+      <if test="row != null and row != ''">
+        #{row,jdbcType=CHAR},
+      </if>
+      <if test="col != null and col != ''">
+        #{col,jdbcType=CHAR},
+      </if>
+      <if test="seatType != null and seatType != ''">
+        #{seatType,jdbcType=CHAR},
+      </if>
+      <if test="carriageSeatIndex != null">
+        #{carriageSeatIndex,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zcqzwy.business.domain.TrainSeat">
+    <!--@mbg.generated-->
+    update train_business.train_seat
+    <set>
+      <if test="trainCode != null and trainCode != ''">
+        train_code = #{trainCode,jdbcType=VARCHAR},
+      </if>
+      <if test="carriageIndex != null">
+        carriage_index = #{carriageIndex,jdbcType=INTEGER},
+      </if>
+      <if test="row != null and row != ''">
+        `row` = #{row,jdbcType=CHAR},
+      </if>
+      <if test="col != null and col != ''">
+        col = #{col,jdbcType=CHAR},
+      </if>
+      <if test="seatType != null and seatType != ''">
+        seat_type = #{seatType,jdbcType=CHAR},
+      </if>
+      <if test="carriageSeatIndex != null">
+        carriage_seat_index = #{carriageSeatIndex,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zcqzwy.business.domain.TrainSeat">
+    <!--@mbg.generated-->
+    update train_business.train_seat
+    set train_code = #{trainCode,jdbcType=VARCHAR},
+      carriage_index = #{carriageIndex,jdbcType=INTEGER},
+      `row` = #{row,jdbcType=CHAR},
+      col = #{col,jdbcType=CHAR},
+      seat_type = #{seatType,jdbcType=CHAR},
+      carriage_seat_index = #{carriageSeatIndex,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+<!--auto generated by MybatisCodeHelper on 2026-02-26-->
+  <select id="selectByAllOrderByTrainCodeAndCarriageIndexAndCarriageSeatIndex"
+    resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from train_business.train_seat
+    <where>
+      <if test="id != null">
+        and id=#{id,jdbcType=BIGINT}
+      </if>
+      <if test="trainCode != null and trainCode != ''">
+        and train_code=#{trainCode,jdbcType=VARCHAR}
+      </if>
+      <if test="carriageIndex != null">
+        and carriage_index=#{carriageIndex,jdbcType=INTEGER}
+      </if>
+      <if test="row != null and row != ''">
+        and `row`=#{row,jdbcType=CHAR}
+      </if>
+      <if test="col != null and col != ''">
+        and col=#{col,jdbcType=CHAR}
+      </if>
+      <if test="seatType != null and seatType != ''">
+        and seat_type=#{seatType,jdbcType=CHAR}
+      </if>
+      <if test="carriageSeatIndex != null">
+        and carriage_seat_index=#{carriageSeatIndex,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null">
+        and create_time=#{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateTime != null">
+        and update_time=#{updateTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+    order by train_code asc, carriage_index asc, carriage_seat_index asc
+  </select>
+
+<!--auto generated by MybatisCodeHelper on 2026-02-26-->
+  <delete id="deleteByTrainCode">
+    delete from train_business.train_seat
+    <where>
+      <if test="trainCode != null and trainCode != ''">
+        and train_code=#{trainCode,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </delete>
+
+<!--auto generated by MybatisCodeHelper on 2026-02-26-->
+  <select id="selectByTrainCodeOrderById" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from train_business.train_seat
+    <where>
+      <if test="trainCode != null and trainCode != ''">
+        and train_code=#{trainCode,jdbcType=VARCHAR}
+      </if>
+    </where>
+    order by id asc
+  </select>
+</mapper>
