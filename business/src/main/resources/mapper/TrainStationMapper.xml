@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zcqzwy.business.mapper.TrainStationMapper">
+  <resultMap id="BaseResultMap" type="com.zcqzwy.business.domain.TrainStation">
+    <!--@mbg.generated-->
+    <!--@Table train_business.train_station-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="train_code" jdbcType="VARCHAR" property="trainCode" />
+    <result column="index" jdbcType="INTEGER" property="index" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="name_pinyin" jdbcType="VARCHAR" property="namePinyin" />
+    <result column="in_time" jdbcType="TIME" property="inTime" />
+    <result column="out_time" jdbcType="TIME" property="outTime" />
+    <result column="stop_time" jdbcType="TIME" property="stopTime" />
+    <result column="km" jdbcType="DECIMAL" property="km" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, train_code, `index`, `name`, name_pinyin, in_time, out_time, stop_time, km, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from train_business.train_station
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from train_business.train_station
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zcqzwy.business.domain.TrainStation">
+    <!--@mbg.generated-->
+    insert into train_business.train_station (id, train_code, `index`, 
+      `name`, name_pinyin, in_time, 
+      out_time, stop_time, km, create_time, 
+      update_time)
+    values (#{id,jdbcType=BIGINT}, #{trainCode,jdbcType=VARCHAR}, #{index,jdbcType=INTEGER}, 
+      #{name,jdbcType=VARCHAR}, #{namePinyin,jdbcType=VARCHAR}, #{inTime,jdbcType=TIME}, 
+      #{outTime,jdbcType=TIME}, #{stopTime,jdbcType=TIME}, #{km,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zcqzwy.business.domain.TrainStation">
+    <!--@mbg.generated-->
+    insert into train_business.train_station
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="trainCode != null and trainCode != ''">
+        train_code,
+      </if>
+      <if test="index != null">
+        `index`,
+      </if>
+      <if test="name != null and name != ''">
+        `name`,
+      </if>
+      <if test="namePinyin != null and namePinyin != ''">
+        name_pinyin,
+      </if>
+      <if test="inTime != null">
+        in_time,
+      </if>
+      <if test="outTime != null">
+        out_time,
+      </if>
+      <if test="stopTime != null">
+        stop_time,
+      </if>
+      <if test="km != null">
+        km,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="trainCode != null and trainCode != ''">
+        #{trainCode,jdbcType=VARCHAR},
+      </if>
+      <if test="index != null">
+        #{index,jdbcType=INTEGER},
+      </if>
+      <if test="name != null and name != ''">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="namePinyin != null and namePinyin != ''">
+        #{namePinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="inTime != null">
+        #{inTime,jdbcType=TIME},
+      </if>
+      <if test="outTime != null">
+        #{outTime,jdbcType=TIME},
+      </if>
+      <if test="stopTime != null">
+        #{stopTime,jdbcType=TIME},
+      </if>
+      <if test="km != null">
+        #{km,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zcqzwy.business.domain.TrainStation">
+    <!--@mbg.generated-->
+    update train_business.train_station
+    <set>
+      <if test="trainCode != null and trainCode != ''">
+        train_code = #{trainCode,jdbcType=VARCHAR},
+      </if>
+      <if test="index != null">
+        `index` = #{index,jdbcType=INTEGER},
+      </if>
+      <if test="name != null and name != ''">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="namePinyin != null and namePinyin != ''">
+        name_pinyin = #{namePinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="inTime != null">
+        in_time = #{inTime,jdbcType=TIME},
+      </if>
+      <if test="outTime != null">
+        out_time = #{outTime,jdbcType=TIME},
+      </if>
+      <if test="stopTime != null">
+        stop_time = #{stopTime,jdbcType=TIME},
+      </if>
+      <if test="km != null">
+        km = #{km,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zcqzwy.business.domain.TrainStation">
+    <!--@mbg.generated-->
+    update train_business.train_station
+    set train_code = #{trainCode,jdbcType=VARCHAR},
+      `index` = #{index,jdbcType=INTEGER},
+      `name` = #{name,jdbcType=VARCHAR},
+      name_pinyin = #{namePinyin,jdbcType=VARCHAR},
+      in_time = #{inTime,jdbcType=TIME},
+      out_time = #{outTime,jdbcType=TIME},
+      stop_time = #{stopTime,jdbcType=TIME},
+      km = #{km,jdbcType=DECIMAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+<!--auto generated by MybatisCodeHelper on 2026-02-26-->
+  <select id="selectByIndexAndTrainCode" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from train_business.train_station
+    <where>
+      <if test="index != null">
+        and `index`=#{index,jdbcType=INTEGER}
+      </if>
+      <if test="trainCode != null and trainCode != ''">
+        and train_code=#{trainCode,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
+
+<!--auto generated by MybatisCodeHelper on 2026-02-26-->
+  <select id="selectByTrainCodeAndName" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from train_business.train_station
+    <where>
+      <if test="trainCode != null and trainCode != ''">
+        and train_code=#{trainCode,jdbcType=VARCHAR}
+      </if>
+      <if test="name != null and name != ''">
+        and `name`=#{name,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
+
+<!--auto generated by MybatisCodeHelper on 2026-02-26-->
+  <select id="selectByAllOrderByTrainCodeAndIndex" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from train_business.train_station
+    <where>
+      <if test="id != null">
+        and id=#{id,jdbcType=BIGINT}
+      </if>
+      <if test="trainCode != null and trainCode != ''">
+        and train_code=#{trainCode,jdbcType=VARCHAR}
+      </if>
+      <if test="index != null">
+        and `index`=#{index,jdbcType=INTEGER}
+      </if>
+      <if test="name != null and name != ''">
+        and `name`=#{name,jdbcType=VARCHAR}
+      </if>
+      <if test="namePinyin != null and namePinyin != ''">
+        and name_pinyin=#{namePinyin,jdbcType=VARCHAR}
+      </if>
+      <if test="inTime != null">
+        and in_time=#{inTime,jdbcType=TIME}
+      </if>
+      <if test="outTime != null">
+        and out_time=#{outTime,jdbcType=TIME}
+      </if>
+      <if test="stopTime != null">
+        and stop_time=#{stopTime,jdbcType=TIME}
+      </if>
+      <if test="km != null">
+        and km=#{km,jdbcType=DECIMAL}
+      </if>
+      <if test="createTime != null">
+        and create_time=#{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateTime != null">
+        and update_time=#{updateTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+    order by train_code asc, `index` asc
+  </select>
+
+<!--auto generated by MybatisCodeHelper on 2026-02-26-->
+  <select id="selectByTrainCodeOrderByIndex" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from train_business.train_station
+    <where>
+      <if test="trainCode != null and trainCode != ''">
+        and train_code=#{trainCode,jdbcType=VARCHAR}
+      </if>
+    </where>
+    order by `index` asc
+  </select>
+</mapper>
