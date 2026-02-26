@@ -20,6 +20,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  **/
 @SpringBootApplication
 @ComponentScan("com.zcqzwy.business")
+@MapperScan("com.zcqzwy.business.mapper")
 public class BusinessApplication {
 
 
