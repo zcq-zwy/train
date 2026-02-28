@@ -10,6 +10,7 @@
     <module> member</module>
     <module>gateway</module>
     <module>business</module>
+    <module>batch</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>

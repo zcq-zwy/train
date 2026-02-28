@@ -3,6 +3,7 @@ package com.zcqzwy.business.controller.admin;
 import com.zcqzwy.business.req.TrainQueryReq;
 import com.zcqzwy.business.req.TrainSaveReq;
 import com.zcqzwy.business.resp.TrainQueryResp;
+import com.zcqzwy.business.service.TrainSeatService;
 import com.zcqzwy.business.service.TrainService;
 import com.zcqzwy.common.resp.CommonResp;
 import com.zcqzwy.common.resp.PageResp;
@@ -18,6 +19,9 @@ public class TrainAdminController {
 
     @Resource
     private TrainService trainService;
+
+    @Resource
+    private TrainSeatService trainSeatService;
 
 
     @PostMapping("/save")
@@ -42,6 +46,12 @@ public class TrainAdminController {
     public CommonResp<List<TrainQueryResp>> queryList() {
         List<TrainQueryResp> list = trainService.queryAll();
         return new CommonResp<>(list);
+    }
+
+    @GetMapping("/gen-seat/{trainCode}")
+    public CommonResp<Object> genSeat(@PathVariable String trainCode) {
+        trainSeatService.genTrainSeat(trainCode);
+        return new CommonResp<>();
     }
 
 

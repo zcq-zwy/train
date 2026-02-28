@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 public class GateWayApplication {
 
   public static void main(String[] args) {
-    System.out.println("网关启动成功");
     SpringApplication.run(GateWayApplication.class,args);
+    System.out.println("网关启动测试 - 当前线程：" + Thread.currentThread().getName());
   }
 }
