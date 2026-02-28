@@ -18,7 +18,7 @@ import org.springframework.core.env.Environment;
  **/
 @SpringBootApplication
 @ComponentScan("com.zcqzwy")
-@MapperScan("com.zcqzwy.mapper")
+@MapperScan("com.zcqzwy.batch.mapper")
 public class BatchApplication {
   private static final Logger LOG = LoggerFactory.getLogger(BatchApplication.class);
 
