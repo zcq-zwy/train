@@ -1,4 +1,4 @@
-package com.zcqzwy.config;
+package com.zcqzwy.batch.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
